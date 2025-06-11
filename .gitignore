@@ -1,2 +1,8 @@
 .stack-work/
 *~
+.DS_Store
+# Ignore build artifacts
+dist/
+# Ignore Haskell build artifacts
+*.o
+*.hi
