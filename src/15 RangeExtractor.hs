@@ -10,10 +10,10 @@ solution = intercalate "," . map formatGroup . consecutiveGroups
     consecutiveGroups [] = []
     consecutiveGroups (x : xs) = go [x] xs
       where
-        go acc [] = [reverse acc]
+        go acc [] = [acc]
         go acc (y : ys)
-          | y == head acc + 1 = go (y : acc) ys
-          | otherwise = reverse acc : go [y] ys
+          | y == last acc + 1 = go (acc ++ [y]) ys
+          | otherwise = acc : go [y] ys
     formatGroup :: [Integer] -> String
     formatGroup g =
       case length g of
