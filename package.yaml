@@ -24,6 +24,7 @@ dependencies:
 - hspec
 - split
 - QuickCheck
+- containers
 
 ghc-options:
 - -Wall
